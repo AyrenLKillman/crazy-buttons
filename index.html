@@ -24,46 +24,53 @@
 </head>
 <body>
 
-<button type="button" class="btn-crazy btn-lg btn-default">
+<button type="button" class="btn-crazy btn-lg btn-default bobm">
     click me!
 </button>
-<button type="button" class="btn-crazy btn-lg btn-primary">
+<button type="button" class="btn-crazy btn-lg btn-primary coinz">
     click me!
 </button>
-<button type="button" class="btn-crazy btn-lg btn-success">
+<button type="button" class="btn-crazy btn-lg btn-success judge">
     click me!
 </button>
-<button type="button" class="btn-crazy btn-lg btn-info">
+<button type="button" class="btn-crazy btn-lg btn-info metalz">
     click me!
 </button>
-<button type="button" class="btn-crazy btn-lg btn-warning">
+<button type="button" class="btn-crazy btn-lg btn-warning oofert">
     click me!
 </button>
-<button type="button" class="btn-crazy btn-lg btn-danger">
+<button type="button" class="btn-crazy btn-lg btn-danger portalz">
     click me!
 </button>
-<button type="button" class="btn-crazy btn-lg btn-default">
+<button type="button" class="btn-crazy btn-lg btn-default bobm">
     click me!
 </button>
-<button type="button" class="btn-crazy btn-lg btn-primary">
+<button type="button" class="btn-crazy btn-lg btn-primary coinz">
     click me!
 </button>
-<button type="button" class="btn-crazy btn-lg btn-success">
+<button type="button" class="btn-crazy btn-lg btn-success judge">
     click me!
 </button>
-<button type="button" class="btn-crazy btn-lg btn-info">
+<button type="button" class="btn-crazy btn-lg btn-info metalz">
     click me!
 </button>
-<button type="button" class="btn-crazy btn-lg btn-warning">
+<button type="button" class="btn-crazy btn-lg btn-warning oofert">
     click me!
 </button>
-<button type="button" class="btn-crazy btn-lg btn-danger">
+<button type="button" class="btn-crazy btn-lg btn-danger portalz">
     click me!
 </button>
 <script>
 
 //grab everything
     const crazyButtons = document.querySelectorAll(".btn-crazy");
+    //the under this are the const's for the sound
+    const boom = document.querySelectorAll(".bobm");
+    const coin = document.querySelectorAll(".coinz");
+    const Judgement = document.querySelectorAll(".judge");
+    const metal = document.querySelectorAll(".metalz");
+    const OOF = document.querySelectorAll(".oofert");
+    const portal = document.querySelectorAll(".portalz");
 // define functions
 function goCrazy(e) {
     const Button = e.target;
@@ -73,16 +80,41 @@ function goCrazy(e) {
     //apply numbers
     Button.style.top = offsetTop + "px";
     Button.style.left = offsetLeft + "px";
-
-
-
-
-
 }
-
-
+//functions for sounds
+function playboom(){
+var music = new Audio('./sounds/boom.mp3');
+music.play();
+}
+function playcoin(){
+var music = new Audio('./sounds/coin.mp3');
+music.play();
+}
+function playJudgement(){
+var music = new Audio('./sounds/judgement.mp3');
+music.play();
+}
+function playmetal(){
+var music = new Audio('./sounds/metal pipe.mp3');
+music.play();
+}
+function playoof(){
+var music = new Audio('./sounds/oof.mp3');
+music.play();
+}
+function playportal(){
+var music = new Audio('./sounds/portalz.mp3');
+music.play();
+}
 //event listeners
 crazyButtons.forEach(button => button.addEventListener("mouseenter", goCrazy));
+//note, idk how to fix it, but you have to atleast click one of the buttons for all of the sounds to work
+boom.forEach(button => button.addEventListener("mouseenter", playboom));
+coin.forEach(button => button.addEventListener("mouseenter", playcoin));
+Judgement.forEach(button => button.addEventListener("mouseenter", playJudgement));
+metal.forEach(button => button.addEventListener("mouseenter", playmetal));
+OOF.forEach(button => button.addEventListener("mouseenter", playoof));
+portal.forEach(button => button.addEventListener("mouseenter", playportal));
 </script>
 <body>
 </html>
